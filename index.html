@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form id="form" action="/hoge">
+    <div class='input'>
+      <label for="user-name">ユーザー名</label>
+      <input id="user-name" type="text">
+    </div>
+    <div class='error'>
+      <label id="user-name-error" style="color: red"></label>
+    </div>
+    <button id="submit">Submit</button>
+  </form>
+  <script src="./src/index.js"></script>
+  <script>
+    //formのsubmitボタンを押したときのイベント
+    document.getElementById('form').addEventListener('submit', function(event) {
+      //ユーザー名をとってきて
+      var userName = document.getElementById('user-name').value
+
+      //ユーザー名がからっぽなら、エラーメッセージを出す
+      if(userName === '') {
+        document.getElementById('user-name-error').innerHTML = 'ユーザーネームを入力してください'
+        event.preventDefault()
+      }
+    })
+  </script>
+</body>
+</html>
