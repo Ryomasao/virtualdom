@@ -1,3 +1,5 @@
+import { isEmpty, isEmail } from './validate.js'
+
 //formのsubmitボタンを押したときのイベント
 document.getElementById('form').addEventListener('submit', function(event) {
   //
@@ -21,15 +23,3 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
 })
 
-// Eメールアドレスの形式チェック
-function isEmail(value) {
-  if(value.match( /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
-    return true
-  }
-  return false
-}
-
-// 空っぽかどうか
-function isEmpty(value) {
-  return value === ''
-}
