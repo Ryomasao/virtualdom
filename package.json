@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode development",
     "start": "webpack-dev-server --watch-content-base",
-    "serve": "http-server -p 9000 -c-1",
+    "serve": "http-server -p 9090 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
